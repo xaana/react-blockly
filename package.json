@@ -11,7 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "watch": "tsc --watch",
-    "prepack": "yarn run build"
+    "prepack": "yarn run build",
+    "postinstall": "tsc"
   },
   "files": [
     "dist"
@@ -20,7 +21,8 @@
   "license": "MIT",
   "dependencies": {
     "blockly": ">= 11.0.0",
-    "prop-types": "^15.8.1"
+    "prop-types": "^15.8.1",
+    "react-blockly": "file:"
   },
   "peerDependencies": {
     "react": "^16.8 || ^17.0 || ^18.0"
