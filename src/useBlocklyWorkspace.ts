@@ -125,7 +125,11 @@ const useBlocklyWorkspace = ({
 
     // Dispose of the workspace when our div ref goes away (Equivalent to didComponentUnmount)
     return () => {
-      newWorkspace.dispose();
+      try {
+        newWorkspace.dispose();
+      } catch {
+        // Do nothing
+      }
 
       if (onDisposeFunction) {
         onDisposeFunction(newWorkspace);
